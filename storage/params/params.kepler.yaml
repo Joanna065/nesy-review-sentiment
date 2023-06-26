@@ -1,0 +1,10 @@
+datamodule:
+  class: src.data.kepler_datamodule.KeplerDataModule:Smart
+  dataset_cls.class: Polemo2KeplerDataset
+
+model:
+  class: src.models.kepler.KeplerModel:Smart
+  gamma: 1
+
+trainer:
+  multiple_trainloader_mode: "min_size"

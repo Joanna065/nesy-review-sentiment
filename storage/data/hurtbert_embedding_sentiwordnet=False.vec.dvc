@@ -1,0 +1,4 @@
+outs:
+- md5: 3407b039599ddc195055d781c1198f34
+  size: 624092
+  path: hurtbert_embedding_sentiwordnet=False.vec

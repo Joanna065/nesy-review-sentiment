@@ -1,0 +1,4 @@
+outs:
+- md5: f69a2f41a2068d5745230002b097a0d8
+  size: 389664
+  path: triplets.csv

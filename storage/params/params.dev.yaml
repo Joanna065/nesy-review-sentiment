@@ -1,0 +1,15 @@
+datamodule:
+  sampler_name: null
+  batch_size: 3
+  num_workers: 0
+
+wandb_logger:
+  offline: true
+
+trainer:
+  gpus: null
+  max_epochs: 2
+  #  fast_dev_run: true
+  limit_train_batches: 2
+  limit_val_batches: 2
+  limit_test_batches: 2

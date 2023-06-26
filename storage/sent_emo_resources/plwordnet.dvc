@@ -1,0 +1,5 @@
+outs:
+- md5: ac23c3c637e2d214be42ac17ec1f2c42.dir
+  size: 95324316
+  nfiles: 7
+  path: plwordnet

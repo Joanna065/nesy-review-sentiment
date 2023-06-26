@@ -1,0 +1,17 @@
+dvc[gdrive]
+numpy
+pandas
+pyyaml
+seaborn
+scikit-learn
+scikit-multilearn==0.2.0
+SmartParams==0.17.2
+spacy
+torch
+torchmetrics
+transformers
+pytorch_metric_learning
+pytorch_lightning
+tqdm==4.64.0
+wandb==0.12.16
+networkx==2.8.2

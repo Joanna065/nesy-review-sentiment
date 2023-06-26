@@ -1,0 +1,9 @@
+datamodule:
+  class: src.data.hurtbert_encoding_datamodule.HurtBertEncodingDataModule:Smart
+  dataset_cls.class: Polemo2HurtBertEncodingDataset
+  use_sentiwordnet: true
+
+model:
+  class: src.models.hurtbert_encoding.HurtbertEncodingModel:Smart
+  bert_dense_dim: 256
+  sentiemo_features_size: 24

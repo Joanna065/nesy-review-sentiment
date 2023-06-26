@@ -1,0 +1,5 @@
+outs:
+- md5: 9fe563e5a66ade75b49cbbcda5a77e67.dir
+  size: 145461644
+  nfiles: 8216
+  path: ccl

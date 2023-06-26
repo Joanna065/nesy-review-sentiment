@@ -1,0 +1,5 @@
+outs:
+- md5: dad4a457da02904ef4805eaf048dcf43.dir
+  size: 1526379890
+  nfiles: 10
+  path: sentiLARE_pretrained

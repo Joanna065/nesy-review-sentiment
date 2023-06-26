@@ -1,0 +1,4 @@
+outs:
+- md5: e0e6d342e661e202e3a0f241db907512
+  size: 248
+  path: emotions.txt

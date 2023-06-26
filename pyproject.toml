@@ -1,0 +1,106 @@
+[tool.black]
+line-length = 100
+skip-string-normalization = true
+target-version = ['py39']
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.idea
+    | \.git
+    | \.gitlab
+    | \.mypy_cache
+    | \.pytest_cache
+    | \.eggs
+    | \.hg
+    | \.tox
+    | \.venv
+  )/
+)
+'''
+
+[tool.coverage]
+branch = true
+omit = '''
+    .git/*
+    .idea/*
+    .tox/*
+    .mypy_cache/*
+    .pytest_cache/*
+    tests/*
+    scripts/*
+    notebooks/*
+'''
+
+[tool.coverage.report]
+exclude_lines = [
+    # Imports
+    'import',
+    'from',
+
+    # Have to re-enable the standard pragma
+    'pragma: no cover',
+
+    # Don't complain about missing debug-only code:
+    'def __repr__',
+
+    # Don't complain if tests don't hit defensive assertion code:
+    'raise AssertionError',
+    'raise NotImplementedError',
+
+    # Don't complain if non-runnable code isn't run:
+    'if __name__ == .__main__.:',
+    'pass',
+
+    # Don't complain about logger usage
+    '_LOGGER = get_logger',
+
+    # Don't complain about abstract methods
+    '@abc.abstractmethod',
+]
+ignore_errors = true
+
+[tool.isort]
+profile = 'black'
+
+[tool.mypy]
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = '''
+    --black
+    --cov-report term-missing
+    --cov=src
+    --flakes
+    --isort
+    --mypy
+'''
+
+filterwarnings = '''
+    ignore::DeprecationWarning
+'''
+
+norecursedirs = '''
+    .idea
+    .git
+    .tox
+    .mypy_cache
+    .pytest_cache
+    notebooks
+    storage
+'''
+
+[tool.tox]
+legacy_tox_ini = '''
+[tox]
+skipsdist= true
+parallel= true
+
+[testenv]
+passenv = PIP_CACHE_DIR
+commands=
+	pip install -r requirements.txt -r requirements-dev.txt
+	mypy --install-types --non-interactive src
+	pytest
+'''

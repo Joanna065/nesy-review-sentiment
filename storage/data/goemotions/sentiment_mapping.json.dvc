@@ -1,0 +1,4 @@
+outs:
+- md5: fd577e618de458f84c33ce4c8e936033
+  size: 527
+  path: sentiment_mapping.json

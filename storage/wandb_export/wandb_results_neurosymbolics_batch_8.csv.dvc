@@ -1,0 +1,4 @@
+outs:
+- md5: b970629d7d81308a4a449e3b83d5c8ae
+  size: 1750185
+  path: wandb_results_neurosymbolics_batch_8.csv

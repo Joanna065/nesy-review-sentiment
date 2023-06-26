@@ -1,0 +1,4 @@
+outs:
+- md5: f981d3b0f83917ceb6a4f92cf49f4955
+  size: 4095390
+  path: plwn_senses_comments.csv

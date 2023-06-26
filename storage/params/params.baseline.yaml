@@ -1,0 +1,46 @@
+seed: 2022
+
+datamodule:
+  class: src.data.main_datamodule.MainDataModule:Smart
+  dataset_cls.class: Polemo2BaselineDataset
+  tokenizer_name: &model bert-base-cased
+  max_token_len: 512
+  sampler_name: null
+  batch_size: 32
+  num_workers: 6
+
+model:
+  class: src.models.baseline.BaselineModel:Smart
+  gradient_checkpointing: false
+  name: *model
+  optimizer:
+    class: AdamW
+    lr: 1.0e-5
+    eps: 1.0e-8
+    weight_decay: 0.01
+    warmup_steps: 0
+
+wandb_logger:
+  class: pytorch_lightning.loggers.wandb.WandbLogger:Smart
+  entity: amc
+  project: neurosymbolics
+
+checkpoint:
+  class: pytorch_lightning.callbacks.model_checkpoint.ModelCheckpoint:Smart
+  monitor: &monitor 'val/f1_macro'
+  mode: &monitor_mode max
+  save_last: true
+  save_top_k: 1
+
+early_stopping:
+  class: pytorch_lightning.callbacks.early_stopping.EarlyStopping:Smart
+  monitor: *monitor
+  mode: *monitor_mode
+  patience: 20
+
+trainer:
+  class: pytorch_lightning.trainer.trainer.Trainer:Smart
+  gpus: [ 0 ]
+  max_epochs: 80
+  accumulate_grad_batches: 1
+  precision: 32

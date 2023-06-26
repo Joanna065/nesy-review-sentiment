@@ -1,0 +1,6 @@
+datamodule:
+  tokenizer_name: &model allegro/herbert-base-cased
+
+model:
+  gradient_checkpointing: true
+  name: *model

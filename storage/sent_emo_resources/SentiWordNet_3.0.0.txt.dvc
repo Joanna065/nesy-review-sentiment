@@ -1,0 +1,4 @@
+outs:
+- md5: 5a32974f5446e28845443e4c9e93937d
+  size: 13590743
+  path: SentiWordNet_3.0.0.txt

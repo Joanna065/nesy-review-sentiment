@@ -1,0 +1,5 @@
+outs:
+- md5: 2171e1eea7b5bf7cf3fe1d87160cceb5.dir
+  size: 4811962
+  nfiles: 5
+  path: plwn_pwn_mappings

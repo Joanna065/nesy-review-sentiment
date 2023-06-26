@@ -1,0 +1,4 @@
+outs:
+- md5: 590618127fef654ddb04897298f7cdd6
+  size: 396
+  path: ekman_mapping.json

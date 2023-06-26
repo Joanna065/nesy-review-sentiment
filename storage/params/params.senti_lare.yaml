@@ -1,0 +1,13 @@
+datamodule:
+  class: src.data.senti_lare_datamodule.SentiLAREDataModule:Smart
+  dataset_cls.class: GoEmotionsSentimentSentiLAREDataset
+  use_plwn_sentiment: true
+  tokenizer_name: &model roberta-base
+  batch_size: 8
+
+model:
+  class: src.models.senti_lare.SentiLAREModel:Smart
+  name: *model
+
+wandb_logger:
+  project: neurosymbolics_batch_8
